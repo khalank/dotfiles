@@ -1,0 +1,207 @@
+show_startup_tips false
+theme "lagoon"
+
+keybinds preset="unlock-first" secondary="Alt Shift" unlock="Ctrl Space" { // <#
+    locked {
+        bind "Alt Shift e" { NewTab; }
+        bind "Alt Shift d" { NewPane "down"; }
+        bind "Alt Shift r" { NewPane "right"; }
+
+        bind "Alt Shift z" { ToggleFocusNoUiFullscreen; }
+
+        bind "Alt Shift q" { Quit; }
+        bind "Alt Shift w" { CloseTab; }
+        bind "Alt Shift x" { CloseFocus; }
+
+        bind "Alt Shift h" { MoveFocus "left"; }
+        bind "Alt Shift j" { MoveFocus "down"; }
+        bind "Alt Shift k" { MoveFocus "up"; }
+        bind "Alt Shift l" { MoveFocus "right"; }
+        bind "Alt Shift m" { FocusLastPane; }
+
+        bind "Alt Shift i" { GoToPreviousTab; }
+        bind "Alt Shift o" { GoToNextTab; }
+        bind "Alt Shift p" { ToggleTab; }
+
+        bind "Ctrl Shift l" {
+            LaunchOrFocusPlugin "zellij:layout-manager" { floating true; };
+        }
+        bind "Ctrl Shift o" {
+            LaunchOrFocusPlugin "zellij:session-manager" { floating true; };
+        }
+
+        bind "Ctrl j" { WriteChars "\r"; } // Force 'newline' on Windows
+    }
+    move {
+        bind "i" { MoveTab "left"; }
+        bind "o" { MoveTab "right"; }
+    }
+} // #>
+
+terminal { // <#
+    copy_keys  "Ctrl Shift c" "Alt Insert" "Super c" "Alt Shift c"
+    paste_keys "Ctrl Shift v" "Shift Insert" "Super v" "Alt Shift v"
+
+    font "Maple Mono NF"
+    font_size 9
+    font_weight "medium"
+
+    theme {
+        foreground "#c0c0d3"
+        background "#02030a"
+        cursor "#00a0a0"
+        black "#0c0c0c"
+        red "#ee2244"
+        green "#449933"
+        yellow "#ee9944"
+        blue "#0066dd"
+        magenta "#bb55dd"
+        cyan "#229999"
+        white "#bbbbbb"
+        bright_black "#777777"
+        bright_red "#ff5577"
+        bright_green "#77cc66"
+        bright_yellow "#ffdd88"
+        bright_blue "#5599ff"
+        bright_magenta "#dd77ee"
+        bright_cyan "#00bbbb"
+        bright_white "#ffffff"
+    }
+} // #>
+
+themes {  // <#
+    lagoon {
+        text_unselected {
+            base "#c0c0d3"
+            background "#080d12"
+            emphasis_0 "#4b9797"
+            emphasis_1 "#90c0e9"
+            emphasis_2 "#5990c0"
+            emphasis_3 "#4b9797"
+        }
+        text_selected {
+            base "#c0c0d3"
+            background "#080d12"
+            emphasis_0 "#4b9797"
+            emphasis_1 "#90c0e9"
+            emphasis_2 "#5990c0"
+            emphasis_3 "#e99059"
+        }
+        ribbon_selected {
+            base "#080d12"
+            background "#6090c0"
+            emphasis_0 "#080d12"
+            emphasis_1 "#080d12"
+            emphasis_2 "#080d12"
+            emphasis_3 "#080d12"
+        }
+        ribbon_unselected {
+            base "#c0c0d3"
+            background "#223759"
+            emphasis_0 "#c0c0d3"
+            emphasis_1 "#c0c0d3"
+            emphasis_2 "#c0c0d3"
+            emphasis_3 "#c0c0d3"
+        }
+        ribbon_hover {
+            base "#080d12"
+            background "#c0c0d3"
+            emphasis_0 "#080d12"
+            emphasis_1 "#080d12"
+            emphasis_2 "#080d12"
+            emphasis_3 "#080d12"
+        }
+        table_title {
+            base "#5990c0"
+            background "#080d12"
+            emphasis_0 "#4b9797"
+            emphasis_1 "#90c0e9"
+            emphasis_2 "#5990c0"
+            emphasis_3 "#e99059"
+        }
+        table_cell_selected {
+            base "#c0c0d3"
+            background "#132134"
+            emphasis_0 "#4b9797"
+            emphasis_1 "#90c0e9"
+            emphasis_2 "#5990c0"
+            emphasis_3 "#e99059"
+        }
+        table_cell_unselected {
+            base "#c0c0d3"
+            background "#080d12"
+            emphasis_0 "#4b9797"
+            emphasis_1 "#90c0e9"
+            emphasis_2 "#5990c0"
+            emphasis_3 "#e99059"
+        }
+        list_selected {
+            base "#c0c0d3"
+            background "#132134"
+            emphasis_0 "#4b9797"
+            emphasis_1 "#90c0e9"
+            emphasis_2 "#5990c0"
+            emphasis_3 "#e99059"
+        }
+        list_unselected {
+            base "#c0c0d3"
+            background "#080d12"
+            emphasis_0 "#4b9797"
+            emphasis_1 "#90c0e9"
+            emphasis_2 "#5990c0"
+            emphasis_3 "#e99059"
+        }
+        frame_selected {
+            base "#90c0e9"
+            background "#080d12"
+            emphasis_0 "#90c0e9"
+            emphasis_1 "#90c0e9"
+            emphasis_2 "#90c0e9"
+            emphasis_3 "#90c0e9"
+        }
+        frame_unselected {
+            base "#406090"
+            background "#080d12"
+            emphasis_0 "#406090"
+            emphasis_1 "#406090"
+            emphasis_2 "#406090"
+            emphasis_3 "#406090"
+        }
+        frame_highlight {
+            base "#4b9797"
+            background "#080d12"
+            emphasis_0 "#4b9797"
+            emphasis_1 "#4b9797"
+            emphasis_2 "#4b9797"
+            emphasis_3 "#4b9797"
+        }
+        exit_code_success {
+            base "#6090c0"
+            background "#080d12"
+            emphasis_0 "#4b9797"
+            emphasis_1 "#90c0e9"
+            emphasis_2 "#5990c0"
+            emphasis_3 "#e99059"
+        }
+        exit_code_error {
+            base "#ee2244"
+            background "#080d12"
+            emphasis_0 "#e99059"
+            emphasis_1 "#90c0e9"
+            emphasis_2 "#5990c0"
+            emphasis_3 "#4b9797"
+        }
+        multiplayer_user_colors {
+            player_1 "#dd77ee"
+            player_2 "#5599ff"
+            player_3 "#ffdd88"
+            player_4 "#77cc66"
+            player_5 "#ff5577"
+            player_6 "#bb55dd"
+            player_7 "#0066dd"
+            player_8 "#ee9944"
+            player_9 "#449933"
+            player_10 "#ee2244"
+        }
+    }
+} // #>
